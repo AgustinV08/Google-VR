@@ -42,8 +42,7 @@ public class Movement : MonoBehaviour
         player = GameObject.Find("Player");
         moveText = GameObject.Find("Movement");
         
-        GameObject timeText = GameObject.Find("TimeoutText");
-        timeoutText = GameObject.Find("TimeoutText").GetComponent<Text>();
+        timeoutText = GameObject.Find("MovementTimeoutText").GetComponent<Text>();
         
         Invoke("hideText", 0.01f);
     }

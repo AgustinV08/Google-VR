@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8216646671087034142}
   - component: {fileID: 8216646671087034138}
   - component: {fileID: 8216646671087034139}
+  - component: {fileID: 3549022816243679782}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -128,6 +129,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   maxRaycastHits: 64
+--- !u!114 &3549022816243679782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216646671087034143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1611d0882e9474594ad6f7c68035fa27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 2
 --- !u!1 &8216646672074327635
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8216646672074327634}
   m_Layer: 0
-  m_Name: Camara Rig
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

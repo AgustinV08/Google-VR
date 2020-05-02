@@ -124,21 +124,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5357032867531489063}
-          m_MethodName: movePlayer
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -166,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6966503bc94404f7195cbd0f57c5aa75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveText: {fileID: 0}
+  timeout: 2

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,27 +7,61 @@ using UnityEngine.UI;
 public class Movement : MonoBehaviour
 {
     private GameObject player;
+    private GameObject moveText;
 
-    public Text moveText;
-    
+    private Text timeoutText;
+
+    public float timeout = 2.0f;
+
+    private bool lookingObject = false;
+
     void Start()
     {
         init();
     }
 
+    void Update()
+    {
+        if (lookingObject)
+        {
+            timeout -= Time.deltaTime;
+
+            timeoutText.text = timeout.ToString("0.##");
+
+            if (timeout <= 0.0f)
+            {
+                movePlayer();
+                
+                hideText();
+            }
+        }
+    }
+
     void init()
     {
         player = GameObject.Find("Player");
+        moveText = GameObject.Find("Movement");
+        
+        GameObject timeText = GameObject.Find("TimeoutText");
+        timeoutText = GameObject.Find("TimeoutText").GetComponent<Text>();
+        
+        Invoke("hideText", 0.01f);
     }
 
     public void showText()
     {
-        moveText.gameObject.SetActive(true);
+        moveText.SetActive(true);
+
+        lookingObject = true;
     }
 
     public void hideText()
     {
-        moveText.gameObject.SetActive(false);
+        moveText.SetActive(false);
+
+        lookingObject = false;
+
+        timeout = 2.0f;
     }
 
     public void movePlayer()

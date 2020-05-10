@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public int damage = 1;
 
-    private float timeout = 5.0f;
+    private float timeout = 10.0f;
 
     void Update()
     {
@@ -18,12 +18,12 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+    
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Enemy"))
+        if (other.collider.CompareTag("MainCamera"))
         {
-            other.gameObject.GetComponent<Enemy>().takeDamage(damage);
+            other.gameObject.GetComponent<Player>().TakeDamage(damage);
 
             gameObject.SetActive(false);
         }

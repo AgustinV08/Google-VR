@@ -2,29 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public int health = 5;
 
+    public Slider healthSlider;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthSlider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
+        
     }
-
+    
     void TakeDamage(int damage)
     {
         health -= damage;
+
+        healthSlider.value = health;
 
         if (health <= 0)
         {

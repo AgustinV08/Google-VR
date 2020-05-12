@@ -45,8 +45,11 @@ public class Enemy : MonoBehaviour
 
         if (shootTimeout <= 0)
         {
-            Shoot();
-            shootTimeout = 2.0f;
+            if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 20)
+            {
+                Shoot();
+                shootTimeout = 2.0f;
+            }
         }
     }
 

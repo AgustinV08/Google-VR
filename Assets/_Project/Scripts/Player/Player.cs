@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         healthSlider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
     }
 
     // Update is called once per frame

@@ -72,7 +72,7 @@ public class Menu : MonoBehaviour
 
     void Play()
     {
-        SceneManager.LoadScene("Dev");
+        SceneManager.LoadScene("Game");
     }
 
     void Quit()
